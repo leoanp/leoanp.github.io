@@ -1,70 +1,94 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Outfit:wght@700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <section class="header">
-            <nav>
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="index.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="intro">
-                <h1>Hello, I'm Leo.</h1>
-                <p>crafting beautiful<br>and intuitive experiences.</p>
-        </section>
-        <section class="about">
-            <div class="about">
-                <h1>ABOUT</h1>
-                <p>My name is Leonardo Pereira, and I'm a Computer Science student currently based in Brasília. As I embark on my educational journey, this website stands as a testament to my present skills and accomplishments.</p>
-                <p>While it currently highlights my projects and abilities, it's just the beginning. In time, it will also evolve to encompass my burgeoning work experience, capturing the transformative stages of my growth.</p>
-                <p>Thank you for joining me on this exciting path of development and exploration.</p>
-            </div>
-        </section>
-        <section class="projects">
-            <div class="projects">
-                <h1>PROJECTS</h1>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="img/1.png" alt="project 1">
-                    </div>
-                    <div class="project-info">
-                        <h2>Project 1</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <a href="#" class="project-btn">View</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="img/2.png" alt="project 2">
-                    </div>
-                    <div class="project-info">
-                        <h2>Project 2</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <a href="#" class="project-btn">View</a>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="img/3.png" alt="project 3">
-                    </div>
-                    <div class="project-info">
-                        <h2>Project 3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <a href="#" class="project-btn">View</a>
-                    </div>
-                </div>
-            </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script defer src="js/animation.js"></script>
+    <script defer src="js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
 
-    </body>
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 bg-black z-10">
+        <nav class="top-nav flex justify-between items-center p-4">
+            <a href="#" class="logo text-xl font-bold">LP</a>
+            <ul class="menu hidden md:flex space-x-4">
+                <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                <li><a href="#work" class="hover:text-gray-400">Work</a></li>
+                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+            <div class="language-switcher hidden md:block">
+                <a href="#" class="hover:text-gray-400">EN</a> | <a href="#" class="hover:text-gray-400">PT</a>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-xl">&#9776;</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Landing Section -->
+    <section class="landing relative" id="home" style="height: calc(100vh - 4rem);"> 
+        <!-- Subtract the height of the navigation bar (4rem or 64px) -->
+        <canvas class="absolute inset-0 w-full h-full"></canvas>
+        <div class="landing-content flex flex-col justify-center h-full pl-8 md:pl-20 transform -translate-y-32">
+            <h1 class="text-left md:text-8xl font-bold mb-4">Leonardo Pereira</h1>
+            <p class="text-left md:text-4xl">Fullstack Developer.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-20" id="about" style="background-color: #141414;">
+        <div class="container mx-auto px-4 text-center justify-between items-center">
+            <h1 class="text-5xl font-bold mb-8">About</h1>
+            <!-- <img src="memoji.png" alt="ME!moji" class="object-cover rounded-lg" style="height: 200px"> -->
+            <p class="text-2xl">I'm Leonardo Pereira, a Computer Science student from Brasília, showcasing my skills and projects.</p>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work py-20 bg-black" id="work">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-12">Work</h1>
+            <div class="work-card flex flex-col md:flex-row items-center md:justify-between max-w-4xl mx-auto bg-neutral-800 rounded-lg p-6">
+                <!-- Left: Work Image -->
+                <div class="work-image md:w-1/2 mb-6 md:mb-0">
+                    <img src="https://via.placeholder.com/400" alt="Placeholder Image" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <!-- Right: Work Description -->
+                <div class="work-info md:w-1/2 text-left md:pl-8">
+                    <h2 class="text-3xl font-bold mb-2">Job Experience Title</h2>
+                    <p class="text-lg mb-4">A short description of the job experience goes here. Discuss the details, skills used, or technologies involved in the project or experience.</p>
+                    <a href="raleduc.html" class="inline-block px-6 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-4xl font-bold text-center mb-8 mt-12">More projects coming soon...</h1>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-20 bg-black" id="contact" style="background-color: #141414;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-8">Get in touch.</h1>
+            <form class="max-w-md mx-auto space-y-4">
+                <input type="email" placeholder="Your Email" required class="w-full p-4 bg-neutral-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500">
+                <textarea placeholder="Your Message" required class="w-full p-4 bg-neutral-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500"></textarea>
+                <button type="submit" class="px-8 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600">Send</button>
+            </form>
+            <div class="social-media mt-8 space-x-4">
+                <a href="#" class="hover:text-gray-400">LinkedIn</a> |
+                <a href="#" class="hover:text-gray-400">GitHub</a> |
+                <a href="#" class="hover:text-gray-400">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+</body>
 </html>
